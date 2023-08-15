@@ -1,0 +1,36 @@
+body {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#box-starter {
+    border: solid;
+    background: purple;
+    color: white;
+    border-color: black;
+    display: block;
+    width: 428px;
+    height: 200px;
+    margin-left: 555px;
+    margin-top: 200px;
+}
+#timer{
+    font-size: 40px;
+    position: absolute;
+    background: purple;
+    color: white;
+    border-style: double;
+}
+header {
+    font-size: 40px;
+}
+#start-game {
+    font-size: 30px;
+    font-family: cursive;
+}
+.hide{
+    display: none;
+
+}
