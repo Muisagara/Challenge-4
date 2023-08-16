@@ -10,7 +10,7 @@
 
   <body>
     <div id="timer">Timer : <span id="time">0</span></div>
-    <section id="box-starter">
+    <section id="start-screen" class="box-starter">
     <header>JavaScript Quiz</header>
     <section>
         <p>This is a timed quiz that shows your knowledge of Javascript.</p>
@@ -19,11 +19,33 @@
     </section>    
     <!-- start game button  -->
         <button id="start-game">Start Game</button>
+        <button id="view-button">View Scores</button>
     </section>   
-    <section>
-        <div id="questions"></div>
+    <section id="boxId" class="hide">
+        <div id="questions" class="hide"></div>
         <div id="question-title"></div>
-        <div id="choices"></div>
+        <div id="choices" class="hide"></div>
+    </section>
+    <!-- FeedBack page -->
+    <section>
+      <div id="feedback" class="hide"></div>
+    </section>  
+    <!-- Highscore page -->
+    <section id="end-screen" class="hide">
+      <h2>Game Over</h2>
+      <div id="score"> Score: <span id="score-value">0</span></div>
+      <input type="text" id="player-name" placeholder="Enter your name">
+      <button id="submit-button">Submit</button>
+      <button id="restart-button">Restart</button>
+      <button id="clear-button">Clear Scores</button>
+      <button id="back-button">Go Back</button>
+      </section>
+      <section id='view-scores' class="hide">
+        <h2>Highscores</h2>
+        <ol id="high-scores-list"></ol>
+        <div id="displayed-player-name"></div>
+        <div id="displayed-player-score"></div>
+      </section>
     </section>
   </body>
   <script src="./js/script.js"></script>

@@ -5,16 +5,14 @@ body {
     text-align: center;
 }
 
-#box-starter {
+.box-starter {
     border: solid;
     background: purple;
     color: white;
     border-color: black;
     display: block;
-    width: 428px;
     height: 200px;
-    margin-left: 555px;
-    margin-top: 200px;
+  
 }
 #timer{
     font-size: 40px;
@@ -30,7 +28,26 @@ header {
     font-size: 30px;
     font-family: cursive;
 }
+#questions{
+    border: solid;
+    border-color: black;
+    height: 70px;
+    font-size: 40px;
+    background-color: purple;
+    color: white;
+
+}
 .hide{
     display: none;
 
+}
+button {
+    background-color: blanchedalmond;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+#choices {
+    display: grid;
 }
