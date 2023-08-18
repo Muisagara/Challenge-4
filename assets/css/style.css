@@ -3,23 +3,29 @@ body {
     margin: 10px;
     padding: 10px;
     text-align: center;
+    background-color: #fde5e5;
+    font-family:'Times New Roman', Times, serif;
+
 }
 
 .box-starter {
     border: solid;
-    background: purple;
+    background: cadetblue;
     color: white;
     border-color: black;
-    display: block;
+    display: flex;
     height: 200px;
-  
+    flex-direction: column;
+    align-items: center;
+    text-decoration: underline;
 }
 #timer{
     font-size: 40px;
     position: absolute;
-    background: purple;
+    background-color: purple;
     color: white;
     border-style: double;
+    font-weight: bold;
 }
 header {
     font-size: 40px;
@@ -33,7 +39,7 @@ header {
     border-color: black;
     height: 70px;
     font-size: 40px;
-    background-color: purple;
+    background: cadetblue;
     color: white;
 
 }
@@ -50,4 +56,44 @@ button {
 }
 #choices {
     display: grid;
+}
+#view-scores{
+    border: solid;
+    background: skyblue;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+    text-align: justify;
+    color: white;
+}
+h2{
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    text-decoration: underline;
+}
+h3{
+    text-decoration: underline;
+    text-align: center;
+}
+#feedback , #score {
+    font-size: 50px;   
+}
+#player-name{
+    font-size: 30px;
+    border-radius: 10px;
+}
+#end-screen {
+    background: cornflowerblue;
+    border: solid;
+    border-radius: 10px;
+
+}
+footer{
+    font-size: 19px;
+    border: solid;
+    border-radius: 5px; 
+    text-align: center;
+    width: 300px;
+    background-color: #c5f7c7;
 }

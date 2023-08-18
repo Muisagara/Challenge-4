@@ -19,7 +19,7 @@ var viewScoresEl = document.getElementById('view-scores');
 var clearScoresbtn = document.getElementById('clear-button');
 var goBackbtn = document.getElementById('back-button');
 
-
+// When the start button is pressed this function will run and hide the startScreenEl.
 function startGame() {
   timerId = setInterval(clockTick, 1000);
   timeEl.textContent = time;
@@ -29,6 +29,8 @@ function startGame() {
   startScreenEl.setAttribute('class' , 'hide');
   questionsEl.removeAttribute('class');
   boxId.removeAttribute('class');
+  feedbackEl.removeAttribute('class' , 'hide');
+
 
   getQuestion();
 }
@@ -45,7 +47,7 @@ var questions = [
     answer: 'Will prevent normal action from the browser.',
   },
   {
-    title: 'What does "THIS" mean in as a global variable?' ,
+    title: 'What does "THIS" mean in a global variable?' ,
     choices: ['Window' , 'Function' , 'Local Variable' , 'Object'],
     answer: 'Window',
   },
@@ -56,7 +58,7 @@ var questions = [
   },
 
 ];
-
+// grabbing questions from the arrays that were made
 function getQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
   questionsEl.textContent = currentQuestion.title;
@@ -82,7 +84,7 @@ function checkAnswer(event) {
   
   } else {
     feedbackEl.textContent = "Wrong!!!";
-    time-=15;
+    time-=5;
     currentQuestionIndex++;
     feedbackEl.removeAttribute('class')
   }
@@ -103,7 +105,10 @@ function gameEnd() {
   feedbackEl.setAttribute('class' , 'hide');
   boxId.setAttribute('class', 'hide');
   viewScoresbtn.removeAttribute('class');
-  viewScoresEl.removeAttribute('class');
+  viewScoresEl.removeAttribute('class','hide');
+  goBackbtn.setAttribute('class', 'hide');
+  scoreEl.removeAttribute('class');
+
 
 }
 
@@ -172,30 +177,63 @@ function restartGame() {
   score = 0;
   currentQuestionIndex = 0;
   feedbackEl.textContent = ''; 
+
   timeEl.textContent = time; 
   scoreValueEl.textContent = score; 
   endScreenEl.setAttribute('class', 'hide'); 
   startScreenEl.setAttribute('class' , 'box-starter'); 
   viewScoresbtn.setAttribute('class', 'view-button');
   viewScoresEl.setAttribute('class', 'hide');
+  feedbackEl.removeAttribute('class', 'hide');
   getQuestion();
 }
 function viewScores(){
   startScreenEl.setAttribute('class' , 'hide');
   endScreenEl.removeAttribute('class');
   viewScoresEl.removeAttribute('class');
-  
-
+  submitButton.setAttribute('class' , ' hide');
+  restartButton.setAttribute('class' , 'hide');
+  playersNameEl.setAttribute('class', ' hide');
+  scoreEl.setAttribute('class', ' hide');
+  goBackbtn.removeAttribute('class' , 'hide');
 };
 
 function clearScores(){
-    window.localStorage.removeItem('highscores');
+    window.localStorage.removeItem('highScores', 'playerData');
     window.location.reload();
   }
   
+// ...
+
+function restartStartScreen() {
+  startScreenEl.classList.remove('hide'); // Remove the 'hide' class
+  endScreenEl.setAttribute('class', 'hide');
+  viewScoresEl.setAttribute('class', 'hide');
+  submitButton.removeAttribute('class' , ' hide');
+  restartButton.removeAttribute('class' , 'hide');
+  playersNameEl.removeAttribute('class' , 'hide');
+startScreenEl.setAttribute('class', 'box-starter');
+  feedbackEl.textContent = ''; 
+  time = 50;
+  timeEl.textContent = time;
+  score = 0;
+  scoreValueEl.textContent = score;
+  currentQuestionIndex = 0;
+}
+
+function goBack() {
+  restartStartScreen();
+}
+
+// ...
+
+goBackbtn.addEventListener('click', goBack);
+
+// ...
+
   document.getElementById('clear-button').onclick = clearScores;
-goBackbtn.addEventListener('click', clearScores)
 viewScoresbtn.addEventListener('click' , viewScores);
 restartButton.addEventListener('click', restartGame);
 startBtn.onclick = startGame;
 console.log(viewScoresbtn);
+console.log(goBackbtn);
