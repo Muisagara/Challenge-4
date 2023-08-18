@@ -15,7 +15,7 @@ var playersNameEl = document.getElementById('player-name');
 // the Start screens and end screens
 var startScreenEl = document.getElementById('start-screen');
 var endScreenEl = document.getElementById('end-screen');
-
+var viewScoresEl= document.getElementById('view-scores')
 // all the buttons for the HTML
 var clearScoresbtn = document.getElementById('clear-button');
 var goBackbtn = document.getElementById('back-button');
