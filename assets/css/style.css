@@ -43,6 +43,7 @@ header {
     color: white;
 
 }
+/* a class that is added and removed consistenly */
 .hide{
     display: none;
 

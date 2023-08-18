@@ -1,23 +1,30 @@
 var timerId;
 var time = 50;
-var startBtn = document.getElementById('start-game');
+var currentQuestionIndex = 0;
+
+// all of my other variables 
 var timeEl = document.getElementById('time');
 var questionsEl = document.getElementById('questions');
 var choicesEl = document.getElementById('choices');
-var currentQuestionIndex = 0;
 var feedbackEl = document.getElementById('feedback');
-var endScreenEl = document.getElementById('end-screen');
 var boxId = document.getElementById('boxId');
 var scoreEl = document.getElementById('score');
 var scoreValueEl = document.getElementById('score-value');
-var submitButton = document.getElementById('submit-button');
 var playersNameEl = document.getElementById('player-name');
-var restartButton = document.getElementById('restart-button');
+
+// the Start screens and end screens
 var startScreenEl = document.getElementById('start-screen');
-var viewScoresbtn = document.getElementById('view-button');
-var viewScoresEl = document.getElementById('view-scores');
+var endScreenEl = document.getElementById('end-screen');
+
+// all the buttons for the HTML
 var clearScoresbtn = document.getElementById('clear-button');
 var goBackbtn = document.getElementById('back-button');
+var submitButton = document.getElementById('submit-button');
+var restartButton = document.getElementById('restart-button');
+var viewScoresbtn = document.getElementById('view-button');
+var startBtn = document.getElementById('start-game');
+
+
 
 // When the start button is pressed this function will run and hide the startScreenEl.
 function startGame() {
@@ -97,7 +104,7 @@ function checkAnswer(event) {
     gameEnd();
   }
 }
-
+// Starts the End screen 
 function gameEnd() {
   clearInterval(timerId);
   endScreenEl.removeAttribute('class');
@@ -171,13 +178,13 @@ function enterbutton(event){
   }
 
 }
+// restarts the game when the button is pressed 
 function restartGame() {
   clearInterval(timerId); 
   time = 50; 
   score = 0;
   currentQuestionIndex = 0;
   feedbackEl.textContent = ''; 
-
   timeEl.textContent = time; 
   scoreValueEl.textContent = score; 
   endScreenEl.setAttribute('class', 'hide'); 
@@ -203,10 +210,9 @@ function clearScores(){
     window.location.reload();
   }
   
-// ...
-
+// the function the recalls the Startscreen to its default
 function restartStartScreen() {
-  startScreenEl.classList.remove('hide'); // Remove the 'hide' class
+  startScreenEl.classList.remove('hide');
   endScreenEl.setAttribute('class', 'hide');
   viewScoresEl.setAttribute('class', 'hide');
   submitButton.removeAttribute('class' , ' hide');
@@ -225,15 +231,8 @@ function goBack() {
   restartStartScreen();
 }
 
-// ...
-
 goBackbtn.addEventListener('click', goBack);
-
-// ...
-
-  document.getElementById('clear-button').onclick = clearScores;
+document.getElementById('clear-button').onclick = clearScores;
 viewScoresbtn.addEventListener('click' , viewScores);
 restartButton.addEventListener('click', restartGame);
 startBtn.onclick = startGame;
-console.log(viewScoresbtn);
-console.log(goBackbtn);
