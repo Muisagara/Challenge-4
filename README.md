@@ -23,7 +23,7 @@ A quiz that test the knowledge of the players of the fundamentals of Javascript.
 [Github](https://github.com/Muisagara/Challenge-4)
 
 ## Screenshots
-(![Javascript Quiz Start screen](image.png))
+![Javascript Quiz Start screen](image.png)
 
 
 ## Credited Sources
